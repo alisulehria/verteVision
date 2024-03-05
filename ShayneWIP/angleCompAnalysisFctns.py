@@ -11,7 +11,6 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolb
 import numpy as np
 import matplotlib.pyplot as plt
 
-
 # orientVectors(float[]) --> (float, float)[]
 #   The angles (in degrees) obtained are not guaranteed to all be positive or negative.
 #   oreintVectors takes in the data directly from the previous step of the workflow
@@ -20,14 +19,12 @@ import matplotlib.pyplot as plt
 
 def orientVectors(degrees):
     output = []
-
     radians = (np.array(degrees) * np.pi) / 180
     for i in range(len(degrees)):
         if degrees[i] > 0:
             degrees[i] -= 180
             radians[i] -= np.pi
         output.append((degrees[i], radians[i]))
-
     return output
 
 
